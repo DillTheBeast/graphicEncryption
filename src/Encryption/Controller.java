@@ -1,16 +1,51 @@
 package Encryption;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 public class Controller {
 
     @FXML
-    private Label label;
+    private Button alphabet;
 
-    public void initialize() {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
+    @FXML
+    private Button caesar;
+
+    @FXML
+    private TextField inputField;
+
+    @FXML
+    private TextField keyField;
+
+    @FXML
+    private TextField outputField;
+
+    @FXML
+    private Button railFence;
+
+    @FXML
+    private Button vignere;
+
+    @FXML
+    void onAlphabetClick(ActionEvent event) {
+
     }
+
+    @FXML
+    void onCaesarClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onRailFenceClick(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onVignere(ActionEvent event) {
+
+    }
+
 }
