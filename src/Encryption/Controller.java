@@ -56,7 +56,7 @@ public class Controller {
             int key = Integer.parseInt(keyField.getText());
             outputField.setText(railFence(inputField.getText(), key));
         } catch (Exception e) {
-            for(int i = 0; i < 100; i++) {
+            for(int i = 0; i < 10; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
             badInput.setHeaderText("Invalid Key");
             badInput.setContentText("Key has to be a number");
@@ -120,12 +120,10 @@ public class Controller {
 
     @FXML
     void onVignere(ActionEvent event) {
-        int holder = 0;
-//Integer.parseInt is converting from a String to an int
         //Try Catch anticipates and fixes the error
         try {
             String bKey = keyField.getText();
-            outputField.setText(vigenere(inputField.getText(), bKey, holder));
+            outputField.setText(vigenere(inputField.getText(), bKey, 0));
         } catch (Exception e) {
             for(int i = 0; i < 10; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
@@ -137,6 +135,8 @@ public class Controller {
         }
     }
     public static String vigenere(String input, String bKey, int idx) {
+        input = input.toUpperCase();
+        bKey = bKey.toUpperCase();
         int idx2 = idx;
         char keyStream[] = new char[input.length()];
         char cipherText[] = new char[input.length()];
@@ -149,16 +149,16 @@ public class Controller {
             idx2 = (idx2+1) % bKey.length();
             
         }
+        String output = "";
         //New letter = iNum + kNum - 1
         for(int i = 0; i < input.length(); i++) {
             kNum = keyStream[i] - 64;
             iNum = input.charAt(i) - 64;
             cipherText[i] = (char)((iNum + kNum) % 26 - 1 + 64);
-            System.out.print(cipherText[i]);
-            System.out.println("");
+            output += String.valueOf(cipherText[i]);
             
         }
-        return "";
+        return output;
     }
 
 }
