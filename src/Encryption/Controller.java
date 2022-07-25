@@ -30,7 +30,12 @@ public class Controller {
 
     @FXML
     void onAlphabetClick(ActionEvent event) {
-
+        String plainText = inputField.getText();
+        String plainOutput = "";
+        for(int a = 0; a < plainText.length(); a++) {
+            plainOutput += plainText.charAt(a) + 0 + " ";
+        }  
+        outputField.setText(plainOutput);
     }
 
     @FXML
