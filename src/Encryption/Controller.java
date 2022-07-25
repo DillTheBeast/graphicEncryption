@@ -46,6 +46,26 @@ public class Controller {
     void onCaesarClick(ActionEvent event) {
 
     }
+
+
+    @FXML
+    void onRailFenceClick(ActionEvent event) {
+        //Integer.parseInt is converting from a String to an int
+        //Try Catch anticipates and fixes the error
+        try {
+            int key = Integer.parseInt(keyField.getText());
+            outputField.setText(railFence(inputField.getText(), key));
+        } catch (Exception e) {
+            for(int i = 0; i < 100; i++) {
+            Alert badInput = new Alert(AlertType.ERROR);
+            badInput.setHeaderText("Invalid Key");
+            badInput.setContentText("Key has to be a number");
+            badInput.setX(Math.random() * 400);
+            badInput.show();
+            }
+        }
+        
+    }
     public static String railFence(String input, int key) {
         ArrayList<ArrayList<Character>> al = new ArrayList<ArrayList<Character>>(key); 
         int position;
@@ -99,27 +119,46 @@ public class Controller {
     }
 
     @FXML
-    void onRailFenceClick(ActionEvent event) {
-        //Integer.parseInt is converting from a String to an int
+    void onVignere(ActionEvent event) {
+        int holder = 0;
+//Integer.parseInt is converting from a String to an int
         //Try Catch anticipates and fixes the error
         try {
-            int key = Integer.parseInt(keyField.getText());
-            outputField.setText(railFence(inputField.getText(), key));
+            String bKey = keyField.getText();
+            outputField.setText(vigenere(inputField.getText(), bKey, holder));
         } catch (Exception e) {
             for(int i = 0; i < 10; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
             badInput.setHeaderText("Invalid Key");
-            badInput.setContentText("Key has to be a number");
+            badInput.setContentText("Key has to be a letter");
             badInput.setX(Math.random() * 400);
             badInput.show();
             }
         }
-        
     }
-
-    @FXML
-    void onVignere(ActionEvent event) {
-
+    public static String vigenere(String input, String bKey, int idx) {
+        int idx2 = idx;
+        char keyStream[] = new char[input.length()];
+        char cipherText[] = new char[input.length()];
+        //iNum = input number and kNum = key number
+        int kNum;
+        int iNum;
+        //Creating keystream    
+        for(int i = 0; i < input.length(); i++) {
+            keyStream[i] = bKey.charAt(idx2);
+            idx2 = (idx2+1) % bKey.length();
+            
+        }
+        //New letter = iNum + kNum - 1
+        for(int i = 0; i < input.length(); i++) {
+            kNum = keyStream[i] - 64;
+            iNum = input.charAt(i) - 64;
+            cipherText[i] = (char)((iNum + kNum) % 26 - 1 + 64);
+            System.out.print(cipherText[i]);
+            System.out.println("");
+            
+        }
+        return "";
     }
 
 }
