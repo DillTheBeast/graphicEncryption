@@ -44,7 +44,36 @@ public class Controller {
 
     @FXML
     void onCaesarClick(ActionEvent event) {
+        try {
+            int key = Integer.parseInt(keyField.getText());
+            outputField.setText(ceaser(inputField.getText(), key));
+        } catch (Exception e) {
+            for(int i = 0; i < 10; i++) {
+            Alert badInput = new Alert(AlertType.ERROR);
+            badInput.setHeaderText("Invalid Key");
+            badInput.setContentText("Key has to be a number");
+            badInput.setX(Math.random() * 400);
+            badInput.show();
+            }
+        }
+    }
 
+    public String ceaser(String input, int key) {
+        String output = "";
+        input = input.toUpperCase();
+        int arr[] = new int [input.length()];
+        char convert[] = new char[arr.length];
+        String newWord = "";
+            for(int a = 0; a < input.length(); a++) {
+                arr[a] = (input.charAt(a) + key); 
+                arr[a] = (arr[a] - 64) % 26 + 64;
+            }
+            for(int b = 0; b < input.length(); b++) {
+                convert[b] = (char)(arr[b]);
+                newWord = String.valueOf(convert);
+            }
+        output += newWord;
+        return output;
     }
 
 
@@ -66,7 +95,7 @@ public class Controller {
         }
         
     }
-    public static String railFence(String input, int key) {
+    public String railFence(String input, int key) {
         ArrayList<ArrayList<Character>> al = new ArrayList<ArrayList<Character>>(key); 
         int position;
         char letter;
@@ -134,7 +163,7 @@ public class Controller {
             }
         }
     }
-    public static String vigenere(String input, String bKey, int idx) {
+    public String vigenere(String input, String bKey, int idx) {
         input = input.toUpperCase();
         bKey = bKey.toUpperCase();
         int idx2 = idx;
