@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Encryption.Controller">
    <children>
       <TextField fx:id="inputField" layoutX="23.0" layoutY="58.0" prefHeight="124.0" prefWidth="289.0" />
@@ -20,7 +19,7 @@
             <Button fx:id="caesar" alignment="CENTER" layoutX="47.0" layoutY="76.0" mnemonicParsing="false" onAction="#onCaesarClick" prefHeight="51.0" prefWidth="106.0" text="Caesar" textAlignment="CENTER" />
          </children>
       </Pane>
-      <Label alignment="CENTER" layoutX="360.0" layoutY="14.0" prefHeight="57.0" prefWidth="200.0" text="Encryption Method" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="300.0" layoutY="15.0" prefHeight="57.0" prefWidth="327.0" text="Encryption Method" textAlignment="CENTER">
          <font>
             <Font size="22.0" />
          </font>
