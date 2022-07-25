@@ -48,11 +48,10 @@ public class Controller {
             int key = Integer.parseInt(keyField.getText());
             outputField.setText(ceaser(inputField.getText(), key));
         } catch (Exception e) {
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < 1; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
             badInput.setHeaderText("Invalid Key");
             badInput.setContentText("Key has to be a number");
-            badInput.setX(Math.random() * 400);
             badInput.show();
             }
         }
@@ -83,11 +82,10 @@ public class Controller {
             int key = Integer.parseInt(keyField.getText());
             outputField.setText(railFence(inputField.getText(), key));
         } catch (Exception e) {
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < 1; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
             badInput.setHeaderText("Invalid Key");
             badInput.setContentText("Key has to be a number");
-            badInput.setX(Math.random() * 400);
             badInput.show();
             }
         }
@@ -152,11 +150,10 @@ public class Controller {
             String bKey = keyField.getText();
             outputField.setText(vigenere(inputField.getText(), bKey, 0));
         } catch (Exception e) {
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < 1; i++) {
             Alert badInput = new Alert(AlertType.ERROR);
             badInput.setHeaderText("Invalid Key");
             badInput.setContentText("Key has to be a letter");
-            badInput.setX(Math.random() * 400);
             badInput.show();
             }
         }
