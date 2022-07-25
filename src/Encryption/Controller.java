@@ -59,7 +59,6 @@ public class Controller {
     }
 
     public String ceaser(String input, int key) {
-        String output = "";
         input = input.toUpperCase();
         int arr[] = new int [input.length()];
         char convert[] = new char[arr.length];
@@ -72,8 +71,7 @@ public class Controller {
                 convert[b] = (char)(arr[b]);
                 newWord = String.valueOf(convert);
             }
-        output += newWord;
-        return output;
+        return newWord;
     }
 
 
