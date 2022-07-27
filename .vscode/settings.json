@@ -1,7 +1,10 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
+    
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "/Users/dillonmaltese/Downloads/javafx-sdk-18.0.2 2/lib/**/*.jar"
     ]
+    
 }

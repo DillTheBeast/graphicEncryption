@@ -9,7 +9,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "Encryption.Main",
-            "vmArgs": "--module-path C:\\Users\\User\\Documents\\javafx-sdk-18.0.2\\lib --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path C:/Users/dillonmaltese/Downloads/javafx-sdk-18.0.2/lib --add-modules javafx.controls,javafx.fxml",
         }
     ]
 }
